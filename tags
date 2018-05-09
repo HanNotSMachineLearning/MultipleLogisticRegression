@@ -1,0 +1,28 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/4dbeb0be/
+DT_clf	longontsteking.py	/^DT_clf = DT_clf.fit(features, labels)$/;"	v
+DT_clf	longontsteking.py	/^DT_clf = tree.DecisionTreeClassifier()$/;"	v
+again	longontsteking.py	/^    again = input("")$/;"	v
+csvList	longontsteking.py	/^    csvList = list(csv.reader(DataFile))[1:]$/;"	v
+druk_op_de_borstkas	longontsteking.py	/^    druk_op_de_borstkas = int(input(""))$/;"	v
+features	longontsteking.py	/^features = []$/;"	v
+geslacht	longontsteking.py	/^    geslacht = int(input(""))$/;"	v
+hoesten	longontsteking.py	/^    hoesten = int(input(""))$/;"	v
+koorts	longontsteking.py	/^    koorts = int(input(""))$/;"	v
+kortademigheid	longontsteking.py	/^    kortademigheid = int(input(""))$/;"	v
+labels	longontsteking.py	/^labels = []$/;"	v
+leeftijd	longontsteking.py	/^    leeftijd = int(input(""))$/;"	v
+pijn_op_de_borst	longontsteking.py	/^    pijn_op_de_borst = int(input(""))$/;"	v
+prediction	longontsteking.py	/^    prediction = int(DT_clf.predict([[geslacht, leeftijd, hoesten, zere_keel, pijn_op_de_borst,$/;"	v
+snelle_ademhaling	longontsteking.py	/^    snelle_ademhaling = int(input(""))$/;"	v
+testData	longontsteking.py	/^    testData = csvList[trainDataCount:].copy()$/;"	v
+test_features	longontsteking.py	/^test_features = []$/;"	v
+test_labels	longontsteking.py	/^test_labels = []$/;"	v
+trainData	longontsteking.py	/^    trainData = csvList[0:trainDataCount].copy()$/;"	v
+trainDataCount	longontsteking.py	/^    trainDataCount = round(len(csvList) * 7 \/ 10) + 1$/;"	v
+zere_keel	longontsteking.py	/^    zere_keel = int(input(""))$/;"	v
