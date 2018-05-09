@@ -4,7 +4,7 @@ from sklearn import tree
 import time
 
 # read csv files
-with open('FruitData.csv', 'r') as DataFile:
+with open('longontsteking_data.csv', 'r') as DataFile:
     csvList = list(csv.reader(DataFile))[1:]
     shuffle(csvList)
     trainDataCount = round(len(csvList) * 7 / 10) + 1
