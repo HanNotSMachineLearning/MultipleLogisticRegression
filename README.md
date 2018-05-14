@@ -110,11 +110,9 @@ while True:
         break
 
 print("\nU heeft aangegeven dat u geen behoefte meer heeft om de applicatie te herstarten. Fijne dag.")
-
-
 ```
 
 ### Resultaat van de applicatie
-![Illustratie van het plot](ApplicationWindow.png)
+![Illustratie van het plot](longontsteking.png)
 
 De code geeft je een vragenlijst die je kunt beantwoorden met `0` (nee) of `1` (ja). De vragen zijn wat je geslacht is, je leeftijd, en welke symptomen je ondervindt. Gebaseerd daarop vertelt de applicatie of je een hooikoorts, longontsteking of geen ziekte hebt.
