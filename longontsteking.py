@@ -1,6 +1,6 @@
 import csv
 from random import shuffle
-from sklearn import tree
+from sklearn import tree, metrics
 
 # read csv files
 available_symptoms = []
@@ -35,9 +35,13 @@ for item in trainData:
     features.append(item[:-1].copy())
 
 # create a decision tree classifier
-DT_clf = tree.DecisionTreeClassifier()
+clf = tree.DecisionTreeClassifier()
 # train the classifier with the trainingsdata
-DT_clf = DT_clf.fit(features, labels)
+clf = clf.fit(features, labels)
+
+# Verkrijg de accuraatheid
+y_pred = clf.predict(test_features)
+print("Accuraatheid is: " + str(metrics.accuracy_score(test_labels, y_pred)))
 
 print("\nDeze applicatie kan bekijken of je longontsteking, hooikoorts of geen ziekte hebt. Hiervoor worden er een aantal vragen gesteld.")
 
@@ -70,7 +74,7 @@ while True:
     for available_symptom in available_symptoms:
         symptoms_array.append(1 if available_symptom in symptoms else 0)
 
-    prediction = int(DT_clf.predict([symptoms_array])[0])
+    prediction = int(clf.predict([symptoms_array])[0])
 
     print("\n\n👉 De applicatie geeft aan dat u de volgende ziekte heeft:")
     if prediction == 1:
