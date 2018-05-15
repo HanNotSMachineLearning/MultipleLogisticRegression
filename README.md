@@ -22,7 +22,7 @@ Om de programmacode te draaien heb je de volgende Python-modulen nodig:
 Door het commando `pip install -r requirements.txt --user` uit te voeren in een opdrachtvenster worden alle modules in één keer gedownload.
 
 ## Data
-De dataset is zelfbedacht en de gegevens zijn geen echte gegevens, maar er wordt geprobeerd zo realistisch mogelijk de symptomen te linken met de ziekten. De dataset kan onderscheid maken tussen hooikoorts, longontsteking en het hebben van geen ziekte. Dit wordt gedaan door te vragen op dezelfde symptomen.
+De dataset is zelfbedacht en de gegevens zijn geen echte gegevens, maar er wordt geprobeerd zo realistisch mogelijk de symptomen te linken met de ziekten. De dataset kan onderscheid maken tussen hooikoorts, longontsteking en het hebben van geen ziekte. Dit wordt voor de gebruiker gedaan door de symptomen die hij of zij invult gecorrespondeert worden met de ja/nee-waarden van de symptomen in de dataset.
 
 ## Demo code
 ```python
@@ -31,8 +31,12 @@ from random import shuffle
 from sklearn import tree
 
 # read csv files
+available_symptoms = []
 with open('longontsteking_data.csv', 'r') as DataFile:
-    csvList = list(csv.reader(DataFile))[1:]
+    csv_file = list(csv.reader(DataFile))
+    available_symptoms = list(
+        map(lambda v: v.strip().lower(), csv_file[0]))[2:-1]
+    csvList = csv_file[1:]
     shuffle(csvList)
     trainDataCount = round(len(csvList) * 7 / 10) + 1
     print("Er worden " + str(trainDataCount) +
@@ -72,31 +76,31 @@ while True:
     print("\nWat is jouw leeftijd?")
     leeftijd = int(input(""))
 
-    print("\nMerk je dat je veel moet hoesten?")
-    hoesten = int(input(""))
+    symptoms = None
+    while symptoms is None:
+        print("\nDe beschikbare symptomen zijn:")
+        print(", ".join(available_symptoms))
+        print("\nVul je symptomen in, gescheiden door een comma:")
+        symptoms = list(map(lambda v: v.strip().lower(), input("").split(",")))
 
-    print("\nHeeft u een zere keel?")
-    zere_keel = int(input(""))
+        existing_symptoms = list(
+            filter(lambda v: v in available_symptoms, symptoms))
 
-    print("\nHeeft u pijn op de borst?")
-    pijn_op_de_borst = int(input(""))
+        if len(existing_symptoms) != len(symptoms):
+            print("\nU mag alleen symptomen opnoemen die bij ons geregistreerd zijn. De symptomen die u invulde maar niet bij ons geregistreerd staan zijn:")
+            not_existing_symptoms = list(
+                set(symptoms) - set(existing_symptoms))
+            print (", ".join(not_existing_symptoms))
 
-    print("\nHeeft u last van kortademigheid?")
-    kortademigheid = int(input(""))
+            symptoms = None
 
-    print("\nVoelt u druk op de borstkas?")
-    druk_op_de_borstkas = int(input(""))
+    symptoms_array = [geslacht, leeftijd]
+    for available_symptom in available_symptoms:
+        symptoms_array.append(1 if available_symptom in symptoms else 0)
 
-    print("\nHeeft u last van koorts?")
-    koorts = int(input(""))
+    prediction = int(DT_clf.predict([symptoms_array])[0])
 
-    print("\nHeeft u last van een snelle ademhaling?")
-    snelle_ademhaling = int(input(""))
-
-    prediction = int(DT_clf.predict([[geslacht, leeftijd, hoesten, zere_keel, pijn_op_de_borst,
-                                      kortademigheid, druk_op_de_borstkas, koorts, snelle_ademhaling]])[0])
-
-    print("\n\nDe applicatie geeft aan dat u de volgende ziekte heeft:")
+    print("\n\n👉 De applicatie geeft aan dat u de volgende ziekte heeft:")
     if prediction == 1:
         print("Longontsteking")
     elif prediction == 2:
@@ -112,7 +116,7 @@ while True:
 print("\nU heeft aangegeven dat u geen behoefte meer heeft om de applicatie te herstarten. Fijne dag.")
 ```
 
-### Resultaat van de applicatie
+## Resultaat van de applicatie
 ![Illustratie van het plot](longontsteking.png)
 
 De code geeft je een vragenlijst die je kunt beantwoorden met `0` (nee) of `1` (ja). De vragen zijn wat je geslacht is, je leeftijd, en welke symptomen je ondervindt. Gebaseerd daarop vertelt de applicatie of je een hooikoorts, longontsteking of geen ziekte hebt.

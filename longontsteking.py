@@ -25,7 +25,6 @@ test_labels = []
 features = []
 labels = []
 
-
 # split labels from features
 for item in testData:
     test_labels.append(item[-1])
