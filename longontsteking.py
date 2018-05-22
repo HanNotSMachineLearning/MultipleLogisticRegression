@@ -4,7 +4,7 @@ from sklearn import tree, metrics
 
 # read csv files
 available_symptoms = []
-with open('longontsteking_data.csv', 'r') as DataFile:
+with open('trainingsdata.csv', 'r') as DataFile:
     csv_file = list(csv.reader(DataFile))
     available_symptoms = list(
         map(lambda v: v.strip().lower(), csv_file[0]))[2:-1]
@@ -24,6 +24,8 @@ test_labels = []
 
 features = []
 labels = []
+
+ziektes = ['Astma', 'Bronchitis', 'Griep', 'Longontsteking', 'Verkoudheid']
 
 # split labels from features
 for item in testData:
@@ -77,13 +79,7 @@ while True:
     prediction = int(clf.predict([symptoms_array])[0])
 
     print("\n\n👉 De applicatie geeft aan dat u de volgende ziekte heeft:")
-    if prediction == 1:
-        print("Longontsteking")
-    elif prediction == 2:
-        print("Hooikoorts")
-    else:
-        print("Helemaal niets")
-
+    print(ziektes[prediction])
     print("\nUw ziekte is bepaald. Druk op 'j' om de applicatie te herstarten.")
     again = input("")
     if again.upper() != "J":
