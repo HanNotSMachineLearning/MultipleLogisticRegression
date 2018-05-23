@@ -39,6 +39,7 @@ for item in train_data:
 
 # create a decision tree classifier
 clf = tree.DecisionTreeClassifier()
+# train the classifier with the trainingsdata
 clf = clf.fit(features, labels)
 
 # Verkrijg de accuraatheid

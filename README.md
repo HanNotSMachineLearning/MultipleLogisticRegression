@@ -3,7 +3,7 @@
 Dit prototype is onderdeel van een reeks van prototypes die gebouwd zijn ter ondersteuning van deelvraag 8: 'Welke algoritmes van machine learning sluiten het beste aan op deze casus? ' van het onderzoek 'Machine learning voor de huisarts'. Door middel van deze prototypes wordt getest welk machine learning algoritme het meest geschikt is om te gebruiken binnen de casus van het onderzoek. Alle prototypes worden geschreven in Python en maken gebruik van het TensorFlow machine learning framework.
 
 ## Algoritme
-De algoritme waarvan hier een prototype gemaakt is, is de decision tree. Bij de decision tree algoritme wordt door middel van aftakkingen beslissingen gemaakt en mogelijkheden uitgesloten. Elk algoritme heeft een andere werkingswijze, maar in het geval van de decision tree wordt er eerst bekeken welk attribuut het meest onderscheid biedt in de dataset.
+De algoritme waarvan hier een prototype gemaakt is, is de decision tree. Bij de decision tree algoritme wordt door middel van aftakkingen beslissingen gemaakt en mogelijkheden uitgesloten.
 
 ## Trainingsdata
 
