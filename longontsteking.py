@@ -1,6 +1,9 @@
 import csv
 from random import shuffle
 from sklearn import tree, metrics
+from sklearn.externals import joblib
+
+model_file = 'model.pkl'
 
 # read csv files
 available_symptoms = []
@@ -38,9 +41,16 @@ for item in train_data:
     features.append(item[:-1].copy())
 
 # create a decision tree classifier
-clf = tree.DecisionTreeClassifier()
-# train the classifier with the trainingsdata
-clf = clf.fit(features, labels)
+clf = None
+
+
+try:
+    clf = joblib.load(model_file)
+except FileNotFoundError:
+    # train the classifier with the trainingsdata
+    clf = tree.DecisionTreeClassifier()
+    clf = clf.fit(features, labels)
+    joblib.dump(clf, model_file) 
 
 # Verkrijg de accuraatheid
 y_pred = clf.predict(test_features)
