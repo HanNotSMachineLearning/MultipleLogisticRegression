@@ -1,9 +1,9 @@
-# Documentatie decision tree algoritme prototype
+# Documentatie multiple logistic regression algoritme prototype
 
 Dit prototype is onderdeel van een reeks van prototypes die gebouwd zijn ter ondersteuning van deelvraag 8: 'Welke algoritmes van machine learning sluiten het beste aan op deze casus? ' van het onderzoek 'Machine learning voor de huisarts'. Door middel van deze prototypes wordt getest welk machine learning algoritme het meest geschikt is om te gebruiken binnen de casus van het onderzoek. Alle prototypes worden geschreven in Python en maken gebruik van het TensorFlow machine learning framework.
 
 ## Algoritme
-De algoritme waarvan hier een prototype gemaakt is, is de decision tree. Bij de decision tree algoritme wordt door middel van aftakkingen beslissingen gemaakt en mogelijkheden uitgesloten.
+Het algoritme wat gebruikt wordt voor deze prototype is het multiple logistic regression algoritme. Bij logistic regression is de uitkomst een ja of een nee, en er worden altijd maar twee dingen met elkaar vergeleken. Bij multiple logistic regression wordt er een probability gegeven, dat is een getal tussen de 0 en 1.
 
 ## Trainingsdata
 
@@ -47,7 +47,8 @@ Het prototype kan gestart worden door het commando `python prototype.py` uit te 
 ```python
 import csv
 from random import shuffle
-from sklearn import tree, metrics
+from sklearn import metrics
+from sklearn.linear_model import LogisticRegression
 
 # read csv files
 available_symptoms = []
@@ -56,14 +57,14 @@ with open('Data/Dataset.csv', 'r') as DataFile:
     available_symptoms = list(
         map(lambda v: v.strip().lower(), train_data[0]))[2:-1]
     train_data = train_data[1:]
-    print("Er worden " + str(len(train_data) - 1) +
+    print("Er worden " + str(len(train_data)) +
           " rijen gebruikt om de applicatie te trainen.")
 
-    with open('Testdata.csv', 'r') as TestDataFile:
+    with open('Data/Testdata.csv', 'r') as TestDataFile:
         test_data = list(csv.reader(TestDataFile))[1:]
-        print("Er worden " + str(len(test_data) - 1) +
-          " rijen gebruikt om de applicatie te testen.")
-    
+        print("Er worden " + str(len(test_data)) +
+              " rijen gebruikt om de applicatie te testen.")
+
 # datasets
 test_features = []
 test_labels = []
@@ -85,7 +86,8 @@ for item in train_data:
     features.append(item[:-1].copy())
 
 # create a decision tree classifier
-clf = tree.DecisionTreeClassifier()
+clf = LogisticRegression()
+
 # train the classifier with the trainingsdata
 clf = clf.fit(features, labels)
 
@@ -93,23 +95,23 @@ clf = clf.fit(features, labels)
 y_pred = clf.predict(test_features)
 print("Accuraatheid is: " + str(metrics.accuracy_score(test_labels, y_pred)))
 
-print("\nDeze applicatie kan bekijken of je de volgende ziektes hebt:")
+print("\nDeze applicatie kan bekijken of u de volgende ziektes hebt:")
 print(", ".join(ziektes))
 
 print("\nOm de ziekte te bepalen worden er een aantal vragen gesteld.")
 
 while True:
-    print("\nWat is jouw geslacht? (0 voor VROUW, 1 voor MAN)")
+    print("\nWat is uw geslacht? (0 voor VROUW, 1 voor MAN)")
     geslacht = int(input(""))
 
-    print("\nWat is jouw leeftijd?")
+    print("\nWat is uw leeftijd?")
     leeftijd = int(input(""))
 
     symptoms = None
     while symptoms is None:
         print("\nDe beschikbare symptomen zijn:")
         print(", ".join(available_symptoms))
-        print("\nVul je symptomen in, gescheiden door een comma:")
+        print("\nVul uw symptomen in, gescheiden door een comma:")
         symptoms = list(map(lambda v: v.strip().lower(), input("").split(",")))
 
         existing_symptoms = list(
