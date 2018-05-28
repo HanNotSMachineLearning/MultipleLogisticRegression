@@ -3,7 +3,7 @@
 Dit prototype is onderdeel van een reeks van prototypes die gebouwd zijn ter ondersteuning van deelvraag 8: 'Welke algoritmes van machine learning sluiten het beste aan op deze casus? ' van het onderzoek 'Machine learning voor de huisarts'. Door middel van deze prototypes wordt getest welk machine learning algoritme het meest geschikt is om te gebruiken binnen de casus van het onderzoek. Alle prototypes worden geschreven in Python en maken gebruik van het TensorFlow machine learning framework.
 
 ## Algoritme
-Het algoritme wat gebruikt wordt voor deze prototype is het multiple logistic regression algoritme. Bij logistic regression is de uitkomst een ja of een nee, en er worden altijd maar twee dingen met elkaar vergeleken. Bij multiple logistic regression wordt er een probability gegeven, dat is een getal tussen de 0 en 1.
+Het algoritme wat gebruikt wordt voor deze prototype is het multiple logistic regression algoritme, een one-versus-rest scheme. Bij logistic regression is de uitkomst een ja of een nee, en er worden altijd maar twee dingen met elkaar vergeleken. Bij multiple logistic regression wordt er een probability gegeven, dat is een getal tussen de 0 en 1.
 
 ## Trainingsdata
 
