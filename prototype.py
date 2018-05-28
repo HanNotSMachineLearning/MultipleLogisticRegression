@@ -1,6 +1,7 @@
 import csv
 from random import shuffle
-from sklearn import tree, metrics
+from sklearn import metrics
+from sklearn.linear_model import LogisticRegression
 
 # read csv files
 available_symptoms = []
@@ -38,7 +39,8 @@ for item in train_data:
     features.append(item[:-1].copy())
 
 # create a decision tree classifier
-clf = tree.DecisionTreeClassifier()
+clf = LogisticRegression()
+
 # train the classifier with the trainingsdata
 clf = clf.fit(features, labels)
 
