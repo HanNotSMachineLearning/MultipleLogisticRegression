@@ -1,7 +1,0 @@
-- python bestand heeft niet de correcte naam, bestand heet longontsteking.py ipv prototype.py (heb ik aangepast)
-- Het aantal rijen test- en trainingsdata kloppen niet, deze geven beide een rij minder aan dan er daadwerkelijk in de dataset zit. Even belangrijk om goed na te lopen of dit gewoon een tel fout is, of dat dit komt doordat er een rij niet wordt ingeladen.
-- Een puntje voor het prototype niet belangrijk, maar het is netter om 'u' ipv 'jou'
-- Voor het testen zijn een aantal datasets toegevoegd, zorg er voor dat de structuur weer overeen komt zoals in de prototypekit gedefinieerd.
-
-Voor de rest ziet het er prima uit!
-(vergeet niet dit document te verwijderen na het verwerken van de feeback!)
