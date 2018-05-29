@@ -34,9 +34,9 @@ In de onderstaande tabellen staan de resultaten van de tests die zijn uitgevoerd
 | 1 symptoom ingevoerd | **Gebruikt geslacht** | Gebruikte leeftijd | Gebruikt symptoom | Verwachte voorspelling | **Correcte voorspelling (j/n)** |
 | -------------------- | --------------------- | ------------------ | ----------------- | ---------------------- | ------------------------------- |
 | developer            | vrouw (0)             | 32                 | hoesten           | verkoudheid            | n (bronchitis)                  |
-| developer            |                       |                    |                   |                        |                                 |
-| developer            |                       |                    |                   |                        |                                 |
-| developer            |                       |                    |                   |                        |                                 |
+| developer            | man (1)               | 64                 | kortademig        | astma                  | j                               |
+| developer            | vrouw (0)             | 63                 | koorts            | griep                  | j                               |
+| developer            | man (1)               | 12                 | neusvleugelen     | longontsteking         | n (astma)                       |
 | reviewer 1           | man (1)               | 23                 | spierpijn         | bronchitis             | n (verkoudheid)                 |
 | reviewer 1           | vrouw (0)             | 23                 | spierpijn         | verkoudheid            | j                               |
 | reviewer 1           | man (1)               | 18                 | hoesten           | longontsteking         | n (astma)                       |
@@ -48,10 +48,10 @@ In de onderstaande tabellen staan de resultaten van de tests die zijn uitgevoerd
 
 | 2 symptomen ingevoerd | **Gebruikt geslacht** | Gebruikte leeftijd | Gebruikt symptoom        | Verwachte voorspelling | **Correcte voorspelling (j/n)** |
 | --------------------- | --------------------- | ------------------ | ------------------------ | ---------------------- | ------------------------------- |
-| developer             |                       |                    |                          |                        |                                 |
-| developer             |                       |                    |                          |                        |                                 |
-| developer             |                       |                    |                          |                        |                                 |
-| developer             |                       |                    |                          |                        |                                 |
+| developer             | man                   | 33                 | hoesten, koorts          | longontsteking         | n (bronchitis)                  |
+| developer             | vrouw                 | 63                 | koorts, verstopte neus   | griep                  | j                               |
+| developer             | man                   | 75                 | niezen, hoesten          | verkoudheid            | n (astma)                       |
+| developer             | vrouw                 | 21                 | koorts, kortademig       | longontsteking         | j                               |
 | reviewer 1            | man (1)               | 33                 | spierpijn, koorts        | bronchitis             | j                               |
 | reviewer 1            | man (1)               | 49                 | keelpijn, verstopte neus | griep                  | j                               |
 | reviewer 1            | vrouw (0)             | 12                 | koorst, keelpijn         | verkoudheid            | n (griep)                       |
@@ -63,10 +63,10 @@ In de onderstaande tabellen staan de resultaten van de tests die zijn uitgevoerd
 
 | 3 symptomen ingevoerd | **Gebruikt geslacht** | Gebruikte leeftijd | Gebruikt symptoom                            | Verwachte voorspelling | **Correcte voorspelling (j/n)** |
 | --------------------- | --------------------- | ------------------ | -------------------------------------------- | ---------------------- | ------------------------------- |
-| developer             |                       |                    |                                              |                        |                                 |
-| developer             |                       |                    |                                              |                        |                                 |
-| developer             |                       |                    |                                              |                        |                                 |
-| developer             |                       |                    |                                              |                        |                                 |
+| developer             | man                   | 53                 | hoesten, koorts, pijn bij borst              | longontsteking         | j                               |
+| developer             | vrouw                 | 64                 | hoesten, hoge slijmproductie, koorts         | bronchitis             | j                               |
+| developer             | man                   | 23                 | kortademig, benauwdheid, piepende ademhaling | astma                  | j                               |
+| developer             | man                   | 44                 | koorts, hoofdpijn, hoesten                   | griep                  | j                               |
 | reviewer 1            | man (1)               | 16                 | gebrek aan eetlust, kortademig, koorts       | longontsteking         | j                               |
 | reviewer 1            | man (1)               | 28                 | kortademig, benauwdheid, hoesten             | astma                  | j                               |
 | reviewer 1            | vrouw(0)              | 15                 | gebrek aan eetlust, spierpijn, koorts        | verkoudheid            | n (griep)                       |
@@ -78,10 +78,10 @@ In de onderstaande tabellen staan de resultaten van de tests die zijn uitgevoerd
 
 | 4 symptomen ingevoerd | **Gebruikt geslacht** | Gebruikte leeftijd | Gebruikt symptoom                                        | Verwachte voorspelling | **Correcte voorspelling (j/n)** |
 | --------------------- | --------------------- | ------------------ | -------------------------------------------------------- | ---------------------- | ------------------------------- |
-| developer             |                       |                    |                                                          |                        |                                 |
-| developer             |                       |                    |                                                          |                        |                                 |
-| developer             |                       |                    |                                                          |                        |                                 |
-| developer             |                       |                    |                                                          |                        |                                 |
+| developer             | man                   | 63                 | kortademig, benauwdheid, hoesten, piepende ademhaling    | astma                  | j                               |
+| developer             | man                   | 12                 | verstopte neus, spierpijn, keelpijn, hoesten, gebrek aan eetlust | griep          | n (verkoudheid)                 |
+| developer             | vrouw                 | 32                 | pijn bij borst, hoofdpijn, vermoeidheid, gebrek aan eetlust | longontsteking      | j                               |
+| developer             | vrouw                 | 44                 | hoesten, niezen, koorts, keelpijn                        | verkoudheid            | n (longontsteking)              |
 | reviewer 1            | man (1)               | 12                 | hoesten, niezen, spierpijn, hoofdpijn                    | verkoudheid            | j                               |
 | reviewer 1            | man (1)               | 34                 | gebrek aan eetlust, spierpijn, keelpijn, hoesten         | griep                  | j                               |
 | reviewer 1            | vrouw(0)              | 22                 | pijn bij borst, koorts, kortademig, gebrek aan eetlust   | benauwdheid            | n (longontsteking)              |
@@ -93,10 +93,10 @@ In de onderstaande tabellen staan de resultaten van de tests die zijn uitgevoerd
 
 | 5 symptomen ingevoerd | **Gebruikt geslacht** | Gebruikte leeftijd | Gebruikt symptoom                                                | Verwachte voorspelling | **Correcte voorspelling (j/n)** |
 | --------------------- | --------------------- | ------------------ | ---------------------------------------------------------------- | ---------------------- | ------------------------------- |
-| developer             |                       |                    |                                                                  |                        |                                 |
-| developer             |                       |                    |                                                                  |                        |                                 |
-| developer             |                       |                    |                                                                  |                        |                                 |
-| developer             |                       |                    |                                                                  |                        |                                 |
+| developer             | vrouw                 | 24                 | hoesten, hoge slijmproductie, piepende ademhaling, koorts, spierpijn | bronchitis         | j                               |
+| developer             | man                   | 19                 | hoesten, koorts, kortademig, hoofdpijn, vermoeidheid             | longontsteking         | j                               |
+| developer             | vrouw                 | 21                 | koorts, hoofdpijn, hoesten, keelpijn, spierpijn                  | griep                  | j                               |
+| developer             | vrouw                 | 55                 | gebrek aan eetlust, koorts, keelpijn, hoesten, niezen            | verkoudheid            | n (griep)                       |
 | reviewer 1            | man (1)               | 14                 | koorts, hoofdpijn, verstopte neus, spierpijn, keelpijn           | griep                  | j                               |
 | reviewer 1            | man (1)               | 19                 | keelpijn, hoesten, hoofdpijn, niezen, spierpijn                  | benauwdheid            | n (verkoudheid)                 |
 | reviewer 1            | vrouw(0)              | 15                 | kortademig, benauwdheid, hoesten, piepende ademhaling, spierpijn | astma                  | j                               |
