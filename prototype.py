@@ -5,7 +5,7 @@ from sklearn.linear_model import LogisticRegression
 
 # read csv files
 available_symptoms = []
-with open('Data/Dataset.csv', 'r') as DataFile:
+with open('Data/Dataset-100.csv', 'r') as DataFile:
     train_data = list(csv.reader(DataFile))
     available_symptoms = list(
         map(lambda v: v.strip().lower(), train_data[0]))[2:-1]
@@ -74,7 +74,7 @@ while True:
             print("\nU mag alleen symptomen opnoemen die bij ons geregistreerd zijn. De symptomen die u invulde maar niet bij ons geregistreerd staan zijn:")
             not_existing_symptoms = list(
                 set(symptoms) - set(existing_symptoms))
-            print (", ".join(not_existing_symptoms))
+            print(", ".join(not_existing_symptoms))
 
             symptoms = None
 
