@@ -1,0 +1,12 @@
+Inleiding:
+* "Dit prototype is onderdeel" verander naar "Dit prototype is een onderdeel". (veranderen in PrototypeKit)
+* "ter ondersteuning van" vervangen door "ter ondersteuning voor" 
+* Er staat: "Alle prototypes worden geschreven in Python en maken gebruik van het TensorFlow machine learning framework".
+Dit klopt niet, we gebruiken geen TensorFlow
+
+Algoritme:
+* Miss handig om te verwijzen naar deelvraag 8? (hoeft niet per se)
+* "en er worden altijd maar twee dingen met elkaar vergeleken." klopt opzich. Maar het gaat erom dat de binaire uitkomst zijn.
+
+Afhankelijkheden:
+* "om precies te zijn versie 3.6" hoeft niet, beter is gewoon "python versie 3.6". (veranderen in PrototypeKit)
