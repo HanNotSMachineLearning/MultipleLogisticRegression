@@ -1,5 +1,4 @@
 import csv
-from random import shuffle
 from sklearn import metrics
 from sklearn.linear_model import LogisticRegression
 
