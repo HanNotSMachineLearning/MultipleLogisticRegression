@@ -1,4 +1,4 @@
-# Testresultaten - ...
+# Testresultaten - Multiple Logistic Regression
 
 In dit document staan de verschillende resultaten van het testen van het prototype uitgewerkt.
 
